@@ -12,6 +12,8 @@
       <h1 class="text-center">Login</h1>
       <p class="text-center lead">Cadastre-se ou acesse com seu login</p>
 
+      <%- include('includes/messagens') %>
+
       <div class="row my-5">
         <div class="col-lg">
           <h4>Faça seu cadastro</h4>
@@ -25,7 +27,7 @@
               <label>Sua Senha</label>
               <input type="password" class="form-control" name="password">
             </div>
-            <button class="btn btn-primary my-3">Cadastre-se</button>
+            <button type="submit" class="btn btn-primary my-3">Cadastre-se</button>
           </form>
         </div>
 
@@ -41,7 +43,7 @@
                 <label>Sua Senha</label>
                 <input type="password" class="form-control" name="password">
               </div>
-              <button class="btn btn-primary my-3">Entrar</button>
+              <button type="submit" class="btn btn-primary my-3">Entrar</button>
             </form>
         </div>
   
