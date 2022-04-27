@@ -21,12 +21,12 @@ class Contato {
         this.errors = [];
         this.contato = null;
     }
-
+    
     buscaPorId = async function(id){
         if(typeof id !== 'string') return;
         const user = await ContatoModel.findById(id);
         return user;
-    }   
+    };
 
     async register(){
         this.valida();
@@ -53,6 +53,7 @@ class Contato {
 
             this.errors.push('Os campos "Email" ou "Telefone" precisam estar com valores.');
         };
+
     };
 
     cleanUp() {
@@ -71,8 +72,38 @@ class Contato {
 
     }
 
-
+    async edit(id){
+        if(typeof id !== 'string') return;
+        
+        this.valida();
+        if(this.errors.length > 0){
+            this.contato = await ContatoModel.findById(id); 
+            return; 
+        }else{
+            this.contato = await ContatoModel.findByIdAndUpdate(id , this.body, {new: true});
+        } 
+        
+    };
+    
+    delete = async function(id){
+        if(typeof id !== 'string') return;
+        const contato = await ContatoModel.findOneAndDelete({_id: id});
+        return contato;
+    }; 
+    
 };   
+
+
+
+Contato.buscaContatos = async function(){
+    const contatos = await ContatoModel.find()
+    .sort({criadoEm: -1});
+    return contatos;
+}; 
+
+
+
+
 
 module.exports = Contato;
 
