@@ -1,0 +1,203 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/*Formulário Contato Estilo*/
+
+.container-contato{
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background: linear-gradient(135deg, #71b7e6, #9b59b6) ;
+    
+}
+
+.formulario{
+    max-width: 700px;
+    width: 100%;
+    background: #fff;
+    padding: 25px 30px;
+    border-radius: 5px;;
+}
+
+.formulario .title{
+    font-size: 25px;
+    font-weight: 500;
+    position: relative;
+}
+
+.subTitle{
+    font-size: 18px;
+    position: relative;
+}
+
+.formulario .title::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 30px;
+    background: linear-gradient(135deg, #71b7e6, #9b59b6) ;
+}
+
+.formulario form .user-details{
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: space-between;
+    margin: 20px 0 12px 0;
+}
+
+form .user-details .form-group{
+    width: calc(100%/ 2 - 20px);
+    margin-bottom: 15px;
+}
+
+.user-details .form-group input{
+    height: 35px;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding-left: 15px;
+    font-size: 13px;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+    
+}
+
+.user-details .form-group .details{
+    font-weight: 500;
+    display: block;
+    margin-bottom: 2px;
+    font-size: 15px;
+    margin-top: 5px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.user-details .form-group input:focus,
+.user-details .form-group input:valid{
+    border-color: 9b59b6;
+    
+}
+
+form .btnSalvar{
+    margin-top: 20px;
+    height: 100%;
+    width: 100%;
+    outline: none;
+    color: #fff;
+    background-image: linear-gradient(135deg, #71b7e6, #9b59b6) ;
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 15px;
+    letter-spacing: 1px;
+    font-weight: 500;
+    background-size: 100%;
+    background-position: left;
+    transition: background-position 1s;
+}
+
+form .btnSalvar:hover{
+    background-position: right;
+    
+}
+
+/*Tabela Estilo */ 
+
+
+
+.containerTable{
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background: linear-gradient(135deg, #71b7e6, #9b59b6);
+    
+}
+
+.containerCont{
+    background-color: #ffffff;
+    width: 60%;
+    height: 680px;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.header_fixed{
+    height: 500px;
+    overflow: auto;
+    margin-top: 30px;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+}
+
+.header_fixed thead th{
+    position: sticky;
+    top: 0;
+    background-color: #000000;
+    color: white;
+    font-size: 15px;
+    font-weight: 800;
+}
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+    
+}
+
+th,td{
+    border-bottom: 1px solid #dddddd;
+    padding: 10px 20px;
+    font-size: 14px;
+}
+
+tr:nth-child(even){
+    background-color: #dddddd;
+}
+tr:nth-child(odd){
+    background-color: #edeef1;
+}
+tr:hover td{
+    color: #9b59b6;
+    cursor: pointer;
+    background-color: #ffffff;
+}
+
+.alinharTexto{
+    text-align: center;
+}
+
+::-webkit-scrollbar{
+    width: 6px;
+}
+
+::-webkit-scrollbar-track{
+    border-radius: 5px;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.3);
+}
+
+::-webkit-scrollbar-thumb{
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.3);
+}
+
+@media (max-width: 1488px) {
+    
+    .containerCont{
+        background-color: #ffffff;
+        width: 100%;
+        height: 650px;
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+}
+

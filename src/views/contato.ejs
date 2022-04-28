@@ -1,19 +1,20 @@
 <%- include('includes/head')%>
   <%- include('includes/nav')%>
 
-    <div class="container">
+    <div class="container-contato">
 
       <div class="row">
 
         <div class="col-lg-2"></div>
 
-        <div class="col-lg-8 my-3">
+        <div class="formulario">
 
-          <h1 class="text-center">Contato</h1>
-          <p class="text-center lead">Crie ou edite seus contatos.</p>
+          <h1 class="title">Contato</h1>
+          <p class="subTitle">Crie ou edite seus contatos.</p>
 
           <%- include('includes/messagens')%>
-
+          
+          <div class="user-details">
           <% if(user._id) { %>
           <form action="/contato/edit/<%= user._id%>" method="POST">
           <% } else { %> 
@@ -21,24 +22,24 @@
           <% } %>   
             <input type="hidden" name="_csrf" value=<%= csrfToken%>>
             <div class="form-group">
-              <label>Nome</label>
-              <input value="<%= user.nome %>" type="text" class="form-control" name="nome">
+              <label class="details">Nome</label>
+              <input placeholder="Nome do Contato" value="<%= user.nome %>" type="text" class="form-control" name="nome">
             </div>
             <div class="form-group">
-              <label>Sobrenome</label>
-              <input value="<%= user.sobrenome %>" type="text" class="form-control" name="sobrenome">
+              <label class="details">Sobrenome</label>
+              <input placeholder="Sobrenome do Contato" value="<%= user.sobrenome %>" type="text" class="form-control" name="sobrenome">
             </div>
             <div class="form-group">
-              <label>E-mail</label>
-              <input value="<%=user.email%>" type="email" class="form-control" name="email">
+              <label class="details">E-mail</label>
+              <input placeholder="E-mail do Contato" value="<%=user.email%>" type="email" class="form-control" name="email">
             </div>
             <div class="form-group">
-              <label>Tel</label>
-              <input value="<%= user.telefone %>" type="tel" class="form-control" name="telefone">
+              <label  class="details">Tel</label>
+              <input placeholder="Telefone do Contato" value="<%= user.telefone %>" type="tel" class="form-control" name="telefone">
             </div>
-            <button type="submit" class="btn btn-primary my-3">Salvar</button>
+            <button type="submit" class="btnSalvar">Salvar</button>
           </form>
-
+        </div>
          
         </div>
 

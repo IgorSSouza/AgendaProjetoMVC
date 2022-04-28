@@ -1,47 +1,54 @@
 <%- include('includes/head')%>
   <%- include('includes/nav')%>
+  
+  <div class="containerTable">
+    
+    <div class="containerCont">
+        
+        <div class="alinharTexto">
+          <h1 class="titleTable">Agenda</h1>
+          <p class="subTitleTable">Seus contatos abaixo:</p>
+        </div>
+          
+        <%- include('includes/messagens')%>
+          
 
-    <div class="container">
+          <div class="header_fixed">
 
-      <div class="row">
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col">Nome</th>
+                  <th scope="col">Sobrenome</th>
+                  <th scope="col">Tel</th>
+                  <th scope="col">E-mail</th>
+                  <th class="alinharTexto">Ações</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% contatos.forEach(user => { %>
+                <tr>
+  
+                  <td scope="row"><%= user.nome %></td>
+                  <td><%= user.sobrenome %></td>
+                  <td><%= user.telefone %></td>
+                  <td><%= user.email %></td>
+                  <td class="alinharTexto">
+                    <a  href="/contato/index/<%= user._id%>"><button class="btn btn-warning">Editar</button></a>
+                    <a href="/contato/delete/<%= user._id%>"><button class="btn btn-danger">Excluir</button></a>
+                  </td>
+                </tr>
+                <% }); %>
+              </tbody>
+            </table>
 
-        <div class="col-lg-2"></div>
-
-        <div class="col-lg-8 my-3">
-
-          <h1 class="text-center">Agenda</h1>
-          <p class="text-center lead">Seus contatos abaixo:</p>
-
-          <%- include('includes/messagens')%>
-
-          <table class="table table-hover my-3">
-            <thead>
-              <tr>
-                <th scope="col">Nome</th>
-                <th scope="col">Sobrenome</th>
-                <th scope="col">Tel</th>
-                <th scope="col">E-mail</th>
-              </tr>
-            </thead>
-            <tbody>
-              <% contatos.forEach(user => { %>
-              <tr>
-                <td scope="row"><%= user.nome %></td>
-                <td><%= user.sobrenome %></td>
-                <td><%= user.telefone %></td>
-                <td><%= user.email %></td>
-                <td><a href="/contato/index/<%= user._id%>">Editar</a></td>
-                <td><a class="text-danger" href="/contato/delete/<%= user._id%>">Excluir</a></td>
-              </tr>
-              <% }); %>
-            </tbody>
-          </table>
-
+          </div>
+        
         </div>
 
-        <div class="col-lg-2"></div>
+        
 
-      </div>
+      
 
     </div>
 
