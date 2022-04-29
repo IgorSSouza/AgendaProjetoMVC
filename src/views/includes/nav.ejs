@@ -1,4 +1,21 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<header class="headerNav">
+    <a class="logo" href="/">Agenda</a>
+    <a class="cta" href="/contato/index"><button class="btnNav">Cadastrar Contato</button></a>
+    <nav>
+        <ul class="navLinks">
+            <% if(user) {%>
+                <li><a class="menuNav" href="/login/logout">Sair</a></li>
+            <% } else { %>
+                <li><a class="menuNav" href="/login/index">Acessar</a></li>
+            <% } %>
+                
+            
+        </ul>
+    </nav>
+    
+</header>
+
+<!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
         <a class="navbar-brand" href="/">Agenda</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -27,4 +44,4 @@
             </ul>
         </div>
     </div>
-</nav>
+</nav> -->
