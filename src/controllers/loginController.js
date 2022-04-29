@@ -6,6 +6,11 @@ exports.index = (req, res) => {
     return res.render('login');
 };
 
+exports.cadastro = (req, res) => {
+
+    return res.render('cadastro');
+}
+
 exports.register = async function (req, res) {
 
     try {

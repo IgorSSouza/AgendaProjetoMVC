@@ -63,7 +63,7 @@ class Login {
 
     valida(){
         this.cleanUp();
-        
+
         if(!validator.isEmail(this.body.email)) {
             this.errors.push('E-mail inválido');
         } 
