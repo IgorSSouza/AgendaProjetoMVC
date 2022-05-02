@@ -2,13 +2,10 @@
 
 
 <div class="corpoLogin">
-  
+  <%- include('includes/messagens') %>
   <div class="center">
 
     <h1 class="h1Title">Cadastre-se</h1>
-  
-        <%- include('includes/messagens') %>
-  
         <form action="/login/register" method="POST">
           <input type="hidden" name="_csrf" value=<%=csrfToken%>>
           <div class="formField">

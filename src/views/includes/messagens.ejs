@@ -1,19 +1,39 @@
 <% if(errors.length> 0) { %>
+
     <div class="alert show">
 
-        <i class="fa-solid fa-circle-exclamation"></i>
         <span class="msg">
-            
+
             <% errors.forEach(erro=> { %>
-                
                 <%= erro %><br>
-                
-            <% }); %>
-                     
+                    <% }); %>
+
         </span>
 
+
     </div>
+
     <% } %>
+
+        <% if(success.length> 0) { %>
+
+            <div class="success show">
+                <span class="msg-success">
+
+                    <% success.forEach(success=> { %>
+                        <%= success %><br>
+                            <% }); %>
+
+                </span>
+            </div>
+
+            <% } %>
+
+
+
+
+
+
 
 
 

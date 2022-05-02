@@ -420,6 +420,7 @@ footer{
     padding: 20px 40px;
     min-width: 420px;
     position: absolute;
+    margin-top: 60px;
     right: 0px;
     top: 10px;
     overflow: hidden;
@@ -427,32 +428,68 @@ footer{
     border-left: 8px solid #ee0000;
 }
 
-.alert.show{
-    animation: show_slide 1s ease forwards;
-}
-
-@keyframes show_slide {
-
-    0%{
-        transform: translateX(100%);
-    }
-    40%{
-        transform: translateX(-10%);
-    }
-    80%{
-        transform: translateX(0%);
-    }
-    100%{
-        transform: translateX(-10px);
-    }
-    
-}
-
 .alert .msg{
     padding: 0;
     font-size: 18px;
     color: #910000;
 }
+
+.success{
+    background: #9bffbc;
+    padding: 20px 40px;
+    min-width: 420px;
+    position: absolute;
+    right: 0px;
+    margin-top: 60px;
+    top: 10px;
+    overflow: hidden;
+    border-radius: 10px;
+    border-left: 8px solid #1cee00;
+}
+
+.success .msg-success{
+    padding: 0;
+    font-size: 18px;
+    color: #016b07;
+}
+
+.alert.show{
+    animation: show_slide 1s ease-in forwards;
+    animation:  remove_slide 5s ease forwards;
+}
+
+.success.show{
+    animation: show_slide 7s ease forwards;
+    animation:  remove_slide 5s ease forwards;
+}
+
+@keyframes show_slide {
+
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+    
+}
+
+@keyframes remove_slide{
+
+    
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+
+
+}
+
+
+
+
 
 /*Responsividade*/
 
